@@ -1,0 +1,145 @@
+\hypertarget{mpi__m04_8c}{\section{mpi\-\_\-m04.\-c File Reference}
+\label{mpi__m04_8c}\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$mpi.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mpi__m04_8c_a5c32c8bd846ce1ebad44c1a1809fc067}{mod} (int D, int d)
+\item 
+void \hyperlink{mpi__m04_8c_ace124491c41c15a9e65c665dce45069b}{muestra\-\_\-vector} (void)
+\item 
+int \hyperlink{mpi__m04_8c_adf0baed9cc18303d35399f470c4116a5}{calcula\-\_\-etapas} (int n)
+\item 
+void \hyperlink{mpi__m04_8c_ab2d2acbbf92591928758d872cda1cfb6}{envio} (int dest, int ini)
+\item 
+void \hyperlink{mpi__m04_8c_a44057b3a729ff976f631ed52b01788f7}{recepcion} (int orig, int ini)
+\item 
+int \hyperlink{mpi__m04_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mpi__m04_8c_a2f852d57f5c63ebea3f007e3360806c4}{mi\-\_\-id}
+\item 
+int \hyperlink{mpi__m04_8c_ab00de16e9393bbf005012413043ea74d}{num\-\_\-procs}
+\item 
+int \hyperlink{mpi__m04_8c_a33e295a1bffa3a6eda0ba9ec8ef077bb}{dato}
+\item 
+int \hyperlink{mpi__m04_8c_acb559820d9ca11295b4500f179ef6392}{i}
+\item 
+int \hyperlink{mpi__m04_8c_a37d972ae0b47b9099e30983131d31916}{j}
+\item 
+int \hyperlink{mpi__m04_8c_a7722c8ecbb62d99aee7ce68b1752f337}{N}
+\item 
+int \hyperlink{mpi__m04_8c_aadf75c541436fefd71b2cba8d25a75fe}{etapas}
+\item 
+int $\ast$ \hyperlink{mpi__m04_8c_ae086787f574c1a13b95728ca3cddbc08}{vector}
+\item 
+int \hyperlink{mpi__m04_8c_a62359957ca77ebf4d9d28cd0b99b901f}{M\-U\-L\-T\-I\-P\-L\-O} = 1
+\item 
+M\-P\-I\-\_\-\-Status \hyperlink{mpi__m04_8c_acd880fccdcf85d7453df9e53e49283d2}{st}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{mpi__m04_8c_adf0baed9cc18303d35399f470c4116a5}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!calcula\-\_\-etapas@{calcula\-\_\-etapas}}
+\index{calcula\-\_\-etapas@{calcula\-\_\-etapas}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{calcula\-\_\-etapas}]{\setlength{\rightskip}{0pt plus 5cm}int calcula\-\_\-etapas (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{mpi__m04_8c_adf0baed9cc18303d35399f470c4116a5}
+Calcular etapas \hypertarget{mpi__m04_8c_ab2d2acbbf92591928758d872cda1cfb6}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!envio@{envio}}
+\index{envio@{envio}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{envio}]{\setlength{\rightskip}{0pt plus 5cm}void envio (
+\begin{DoxyParamCaption}
+\item[{int}]{dest, }
+\item[{int}]{ini}
+\end{DoxyParamCaption}
+)}}\label{mpi__m04_8c_ab2d2acbbf92591928758d872cda1cfb6}
+Realizar un envío a un proceso 
+\begin{DoxyParams}{Parameters}
+{\em dest} & \{int\} el id del proceso destino \\
+\hline
+{\em ini} & \{int\} el segmento del vector \\
+\hline
+\end{DoxyParams}
+\hypertarget{mpi__m04_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!main@{main}}
+\index{main@{main}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{mpi__m04_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+Variables de control de comunicaciones
+
+Contador de envíos \hypertarget{mpi__m04_8c_a5c32c8bd846ce1ebad44c1a1809fc067}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!mod@{mod}}
+\index{mod@{mod}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{mod}]{\setlength{\rightskip}{0pt plus 5cm}int mod (
+\begin{DoxyParamCaption}
+\item[{int}]{D, }
+\item[{int}]{d}
+\end{DoxyParamCaption}
+)}}\label{mpi__m04_8c_a5c32c8bd846ce1ebad44c1a1809fc067}
+Implementación de módulos negativos \hypertarget{mpi__m04_8c_ace124491c41c15a9e65c665dce45069b}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!muestra\-\_\-vector@{muestra\-\_\-vector}}
+\index{muestra\-\_\-vector@{muestra\-\_\-vector}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{muestra\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}void muestra\-\_\-vector (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mpi__m04_8c_ace124491c41c15a9e65c665dce45069b}
+Función para mostrar vectores \hypertarget{mpi__m04_8c_a44057b3a729ff976f631ed52b01788f7}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!recepcion@{recepcion}}
+\index{recepcion@{recepcion}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{recepcion}]{\setlength{\rightskip}{0pt plus 5cm}void recepcion (
+\begin{DoxyParamCaption}
+\item[{int}]{orig, }
+\item[{int}]{ini}
+\end{DoxyParamCaption}
+)}}\label{mpi__m04_8c_a44057b3a729ff976f631ed52b01788f7}
+Realizar una recepción desde un proceso 
+\begin{DoxyParams}{Parameters}
+{\em orig} & \{int\} el id del proceso origen \\
+\hline
+{\em ini} & \{int\} el segmento del vector \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{mpi__m04_8c_a33e295a1bffa3a6eda0ba9ec8ef077bb}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!dato@{dato}}
+\index{dato@{dato}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{dato}]{\setlength{\rightskip}{0pt plus 5cm}int dato}}\label{mpi__m04_8c_a33e295a1bffa3a6eda0ba9ec8ef077bb}
+\hypertarget{mpi__m04_8c_aadf75c541436fefd71b2cba8d25a75fe}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!etapas@{etapas}}
+\index{etapas@{etapas}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{etapas}]{\setlength{\rightskip}{0pt plus 5cm}int etapas}}\label{mpi__m04_8c_aadf75c541436fefd71b2cba8d25a75fe}
+\hypertarget{mpi__m04_8c_acb559820d9ca11295b4500f179ef6392}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!i@{i}}
+\index{i@{i}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}int i}}\label{mpi__m04_8c_acb559820d9ca11295b4500f179ef6392}
+\hypertarget{mpi__m04_8c_a37d972ae0b47b9099e30983131d31916}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!j@{j}}
+\index{j@{j}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{j}]{\setlength{\rightskip}{0pt plus 5cm}int j}}\label{mpi__m04_8c_a37d972ae0b47b9099e30983131d31916}
+\hypertarget{mpi__m04_8c_a2f852d57f5c63ebea3f007e3360806c4}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!mi\-\_\-id@{mi\-\_\-id}}
+\index{mi\-\_\-id@{mi\-\_\-id}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{mi\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int mi\-\_\-id}}\label{mpi__m04_8c_a2f852d57f5c63ebea3f007e3360806c4}
+Entregable m04
+
+Desarrolla una implementación eficiente de recogida global en M\-P\-I que utilice un esquema de concatenación. El procedimiento se desarrolla en p etapas. En cada etapa un proceso envía una parte del vector a su vecino de la derecha y recibe otra parte de su vecino de la izquierda. En la primera etapa la parte enviada es la propia. En cada una de las siguientes p − 1 etapas, la parte enviada es la recibida en la etapa anterior. \hypertarget{mpi__m04_8c_a62359957ca77ebf4d9d28cd0b99b901f}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!M\-U\-L\-T\-I\-P\-L\-O@{M\-U\-L\-T\-I\-P\-L\-O}}
+\index{M\-U\-L\-T\-I\-P\-L\-O@{M\-U\-L\-T\-I\-P\-L\-O}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{M\-U\-L\-T\-I\-P\-L\-O}]{\setlength{\rightskip}{0pt plus 5cm}int M\-U\-L\-T\-I\-P\-L\-O = 1}}\label{mpi__m04_8c_a62359957ca77ebf4d9d28cd0b99b901f}
+\hypertarget{mpi__m04_8c_a7722c8ecbb62d99aee7ce68b1752f337}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!N@{N}}
+\index{N@{N}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{N}]{\setlength{\rightskip}{0pt plus 5cm}int N}}\label{mpi__m04_8c_a7722c8ecbb62d99aee7ce68b1752f337}
+\hypertarget{mpi__m04_8c_ab00de16e9393bbf005012413043ea74d}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!num\-\_\-procs@{num\-\_\-procs}}
+\index{num\-\_\-procs@{num\-\_\-procs}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{num\-\_\-procs}]{\setlength{\rightskip}{0pt plus 5cm}int num\-\_\-procs}}\label{mpi__m04_8c_ab00de16e9393bbf005012413043ea74d}
+\hypertarget{mpi__m04_8c_acd880fccdcf85d7453df9e53e49283d2}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!st@{st}}
+\index{st@{st}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{st}]{\setlength{\rightskip}{0pt plus 5cm}M\-P\-I\-\_\-\-Status st}}\label{mpi__m04_8c_acd880fccdcf85d7453df9e53e49283d2}
+\hypertarget{mpi__m04_8c_ae086787f574c1a13b95728ca3cddbc08}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!vector@{vector}}
+\index{vector@{vector}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
+\subsubsection[{vector}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ vector}}\label{mpi__m04_8c_ae086787f574c1a13b95728ca3cddbc08}
