@@ -1,3 +1,0 @@
-#!/bin/bash
-mpicc $1 -o $2 -std=c99
-mpirun -np $3 $2 $4
