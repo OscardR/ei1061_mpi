@@ -16,9 +16,16 @@ void muestra_vector(void) {
 	}
 }
 
+/*! Función main.
+ * Inicializa MPI y ejecuta el algoritmo de compartición. 
+ *
+ * @param argc parámetro automático con el número de argumentos recibidos desde el CLI
+ * @param argv [1] el primer parámetro del CLI especifica el número de elementos del vector que pertenecen a cada proceso (`MULTIPLO`). Por defecto `MULTIPLO` es 1.
+ * @return 0 si todo ha ido bien.
+ */
 int main( int argc, char ** argv ) {
 
-	MPI_Status st;
+	// MPI_Status st; // No necesitamos status en broadcast
 	MPI_Init(&argc, &argv);
 	MPI_Comm_rank(MPI_COMM_WORLD, &mi_id);
 	MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
