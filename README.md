@@ -3,7 +3,7 @@ EI1061 — MPI
 
 Prácticas de MPI de la asignatura **EI1061 — Arquitecturas Avanzadas**. Código implementado usando OpenMPI.
 
-* [Ejemplo de ejecución ](@ref ejemplo)
+* [Ejemplo de ejecución ](USAGE.md)
 
 * Código: http://github.com/OscardR/ei1061_mpi
 
