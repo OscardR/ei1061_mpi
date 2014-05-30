@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Ejercicio 03.  
+<p>Laboratorio M2.2.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
@@ -127,8 +127,16 @@ Variables</h2></td></tr>
 <tr class="separator:a62359957ca77ebf4d9d28cd0b99b901f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Ejercicio 03. </p>
-<p>Compartir valores de un vector con un algoritmo logarítmico multietapa. </p>
+<div class="textblock"><p>Laboratorio M2.2. </p>
+<h1>Recogida global en MPI (II)</h1>
+<p>Desarrolla una implementación de <em>recogida global</em> en MPI en la que <em>p</em> procesos deben conseguir una copia de todos los elementos de un vector de <em>n</em> datos inicialmente repartido a partes iguales entre todos ellos (es decir, cada proceso tiene inicialmente <em>n/p</em> elementos del vector y, para simplificar el problema, se supondrá que <em>n</em> es múltiplo de <em>p</em>). Se trata de la misma operación que implementa la función <code>MPI_Allgather</code> de la biblioteca MPI.</p>
+<p>Dicha difusión debe realizarse utilizando las siguiente estrategias:</p>
+<ul>
+<li><b>Difusión lineal.</b> Uno tras otro, cada uno de los procesos envía su parte del vector a los restantes procesos mediante una operación de difusión de MPI (MPI Bcast).</li>
+</ul>
+<ul>
+<li><b>Doblado recursivo.</b> Este algoritmo funciona en \(log_2 p\) etapas. En la primera etapa, aquellos procesos que están a una distancia de 1 (en relación a su identificador) intercambian sus partes del vector. En la segunda etapa, los procesos que están a una distancia 2 intercambian sus partes del vector (incluidas aquellas que recibieron en la etapa anterior). En la tercera etapa realizarán el intercambio aquellos procesos que están a una distancia 4 y así sucesivamente. Para simplificar el problema, se supondrá que p es una potencia de 2. </li>
+</ul>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="adf0baed9cc18303d35399f470c4116a5"></a>
 <div class="memitem">
@@ -176,7 +184,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Función main. Inicializa MPI y ejecuta el algoritmo de compartición.</p>
+<p>Función main. Inicializa MPI y ejecuta el algoritmo de <b>doblado recursivo</b>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">argc</td><td>parámetro automático con el número de argumentos recibidos desde el CLI </td></tr>
@@ -305,7 +313,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 30 2014 00:24:36 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 30 2014 18:18:26 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

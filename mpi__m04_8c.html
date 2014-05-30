@@ -96,19 +96,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">mpi_m04.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Laboratorio M4.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;mpi.h&gt;</code><br/>
 <code>#include &lt;math.h&gt;</code><br/>
+<code>#include &quot;utils.h&quot;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5c32c8bd846ce1ebad44c1a1809fc067"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m04_8c.html#a5c32c8bd846ce1ebad44c1a1809fc067">mod</a> (int D, int d)</td></tr>
 <tr class="separator:a5c32c8bd846ce1ebad44c1a1809fc067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace124491c41c15a9e65c665dce45069b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m04_8c.html#ace124491c41c15a9e65c665dce45069b">muestra_vector</a> (void)</td></tr>
-<tr class="separator:ace124491c41c15a9e65c665dce45069b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf0baed9cc18303d35399f470c4116a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m04_8c.html#adf0baed9cc18303d35399f470c4116a5">calcula_etapas</a> (int n)</td></tr>
-<tr class="separator:adf0baed9cc18303d35399f470c4116a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2d2acbbf92591928758d872cda1cfb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m04_8c.html#ab2d2acbbf92591928758d872cda1cfb6">envio</a> (int dest, int ini)</td></tr>
 <tr class="separator:ab2d2acbbf92591928758d872cda1cfb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44057b3a729ff976f631ed52b01788f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m04_8c.html#a44057b3a729ff976f631ed52b01788f7">recepcion</a> (int orig, int ini)</td></tr>
@@ -139,24 +139,11 @@ Variables</h2></td></tr>
 <tr class="memitem:acd880fccdcf85d7453df9e53e49283d2"><td class="memItemLeft" align="right" valign="top">MPI_Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m04_8c.html#acd880fccdcf85d7453df9e53e49283d2">st</a></td></tr>
 <tr class="separator:acd880fccdcf85d7453df9e53e49283d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="adf0baed9cc18303d35399f470c4116a5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int calcula_etapas </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Calcular etapas </p>
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Laboratorio M4. </p>
+<h1>Recogida global en MPI (III)</h1>
+<p>Desarrolla una implementación eficiente de <em>recogida global</em> en MPI que utilice un esquema de <b>concatenación</b>. El procedimiento se desarrolla en <em>p</em> etapas. En cada etapa un proceso envía una parte del vector a su vecino de la derecha y recibe otra parte de su vecino de la izquierda. En la primera etapa la parte enviada es la propia. En cada una de las siguientes <em>p − 1</em> etapas, la parte enviada es la recibida en la etapa anterior. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ab2d2acbbf92591928758d872cda1cfb6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -242,24 +229,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Implementación de módulos negativos </p>
-
-</div>
-</div>
-<a class="anchor" id="ace124491c41c15a9e65c665dce45069b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void muestra_vector </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Función para mostrar vectores </p>
+<p>Implementación del operador <code>%</code> teniendo en cuenta módulos negativos</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">D</td><td>Dividendo </td></tr>
+    <tr><td class="paramname">d</td><td>Divisor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>\(D \mod d\), teniendo en cuenta el signo de <em>D</em>. Por ejemplo, <code>mod(-1, 8)</code> devolverá <code>7</code> </dd></dl>
 
 </div>
 </div>
@@ -355,8 +333,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Entregable m04</p>
-<p>Desarrolla una implementación eficiente de recogida global en MPI que utilice un esquema de concatenación. El procedimiento se desarrolla en p etapas. En cada etapa un proceso envía una parte del vector a su vecino de la derecha y recibe otra parte de su vecino de la izquierda. En la primera etapa la parte enviada es la propia. En cada una de las siguientes p − 1 etapas, la parte enviada es la recibida en la etapa anterior. </p>
 
 </div>
 </div>
@@ -423,7 +399,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 30 2014 00:24:36 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 30 2014 18:18:26 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

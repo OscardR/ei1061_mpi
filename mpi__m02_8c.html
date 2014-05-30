@@ -97,6 +97,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">mpi_m02.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Laboratorio M2.1.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;mpi.h&gt;</code><br/>
@@ -104,6 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a97662895b2bb5bc96167d7892929b80e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#a97662895b2bb5bc96167d7892929b80e">MULTIPLO</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:a97662895b2bb5bc96167d7892929b80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define cuantos elementos del vector posee cada proceso.  <a href="#a97662895b2bb5bc96167d7892929b80e">More...</a><br/></td></tr>
 <tr class="separator:a97662895b2bb5bc96167d7892929b80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -116,19 +120,29 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a2f852d57f5c63ebea3f007e3360806c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#a2f852d57f5c63ebea3f007e3360806c4">mi_id</a></td></tr>
+<tr class="memdesc:a2f852d57f5c63ebea3f007e3360806c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número que identifica a cada proceso. Es asignado automáticamente por MPI al ejecutar con <code>mpirun</code>.  <a href="#a2f852d57f5c63ebea3f007e3360806c4">More...</a><br/></td></tr>
 <tr class="separator:a2f852d57f5c63ebea3f007e3360806c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab00de16e9393bbf005012413043ea74d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#ab00de16e9393bbf005012413043ea74d">num_procs</a></td></tr>
+<tr class="memdesc:ab00de16e9393bbf005012413043ea74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de procesos. Es establecido automáticamente por MPI al ejecutar con <code>mpirun</code>.  <a href="#ab00de16e9393bbf005012413043ea74d">More...</a><br/></td></tr>
 <tr class="separator:ab00de16e9393bbf005012413043ea74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33e295a1bffa3a6eda0ba9ec8ef077bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#a33e295a1bffa3a6eda0ba9ec8ef077bb">dato</a></td></tr>
-<tr class="separator:a33e295a1bffa3a6eda0ba9ec8ef077bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb559820d9ca11295b4500f179ef6392"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#acb559820d9ca11295b4500f179ef6392">i</a></td></tr>
+<tr class="memdesc:acb559820d9ca11295b4500f179ef6392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador. Se usa en los diferentes bucles del programa.  <a href="#acb559820d9ca11295b4500f179ef6392">More...</a><br/></td></tr>
 <tr class="separator:acb559820d9ca11295b4500f179ef6392"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7722c8ecbb62d99aee7ce68b1752f337"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a></td></tr>
-<tr class="separator:a7722c8ecbb62d99aee7ce68b1752f337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae086787f574c1a13b95728ca3cddbc08"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#ae086787f574c1a13b95728ca3cddbc08">vector</a></td></tr>
 <tr class="separator:ae086787f574c1a13b95728ca3cddbc08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Laboratorio M2.1. </p>
+<h1>Recogida global en MPI (I)</h1>
+<p>Desarrolla una implementación de <em>recogida global</em> en MPI en la que <em>p</em> procesos deben conseguir una copia de todos los elementos de un vector de <em>n</em> datos inicialmente repartido a partes iguales entre todos ellos (es decir, cada proceso tiene inicialmente <em>n/p</em> elementos del vector y, para simplificar el problema, se supondrá que <em>n</em> es múltiplo de <em>p</em>). Se trata de la misma operación que implementa la función <code>MPI_Allgather</code> de la biblioteca MPI.</p>
+<p>Dicha difusión debe realizarse utilizando las siguiente estrategias:</p>
+<ul>
+<li><b>Difusión lineal.</b> Uno tras otro, cada uno de los procesos envía su parte del vector a los restantes procesos mediante una operación de difusión de MPI (MPI Bcast).</li>
+</ul>
+<ul>
+<li><b>Doblado recursivo.</b> Este algoritmo funciona en \(log_2 p\) etapas. En la primera etapa, aquellos procesos que están a una distancia de 1 (en relación a su identificador) intercambian sus partes del vector. En la segunda etapa, los procesos que están a una distancia 2 intercambian sus partes del vector (incluidas aquellas que recibieron en la etapa anterior). En la tercera etapa realizarán el intercambio aquellos procesos que están a una distancia 4 y así sucesivamente. Para simplificar el problema, se supondrá que p es una potencia de 2. </li>
+</ul>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a97662895b2bb5bc96167d7892929b80e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -138,6 +152,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Define cuantos elementos del vector posee cada proceso. </p>
 
 </div>
 </div>
@@ -165,7 +181,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Función main. Inicializa MPI y ejecuta el algoritmo de compartición.</p>
+<p>Función main. Inicializa MPI y ejecuta el algoritmo de <b>difusión lineal</b>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">argc</td><td>parámetro automático con el número de argumentos recibidos desde el CLI </td></tr>
@@ -174,6 +190,25 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 si todo ha ido bien. </dd></dl>
+<h3>PASOS:</h3>
+<ul>
+<li>Se inicializa el sistema MPI.</li>
+</ul>
+<ul>
+<li>Se inicializa el vector y se rellena el área de cada proceso con un valor igual al ID del proceso.</li>
+</ul>
+<ul>
+<li>Cada proceso muestra su vector.</li>
+</ul>
+<ul>
+<li>Cada proceso hace un <em>broadcast</em> al resto de procesos con su trozo del vector.</li>
+</ul>
+<ul>
+<li>Cada proceso vuelve a mostrar su vector.</li>
+</ul>
+<ul>
+<li>Se finaliza el sistema MPI y se retorna 0. </li>
+</ul>
 
 </div>
 </div>
@@ -190,22 +225,11 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Muestra el vector del proceso actual por pantalla, junto al identificador del proceso </p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a33e295a1bffa3a6eda0ba9ec8ef077bb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int dato</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="acb559820d9ca11295b4500f179ef6392"></a>
 <div class="memitem">
 <div class="memproto">
@@ -215,6 +239,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Contador. Se usa en los diferentes bucles del programa. </p>
 
 </div>
 </div>
@@ -228,17 +254,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a7722c8ecbb62d99aee7ce68b1752f337"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int N</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Número que identifica a cada proceso. Es asignado automáticamente por MPI al ejecutar con <code>mpirun</code>. </p>
 
 </div>
 </div>
@@ -252,6 +268,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Número de procesos. Es establecido automáticamente por MPI al ejecutar con <code>mpirun</code>. </p>
+
 </div>
 </div>
 <a class="anchor" id="ae086787f574c1a13b95728ca3cddbc08"></a>
@@ -263,13 +281,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Vector con los valores a repartir entre procesos. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 30 2014 00:24:36 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 30 2014 18:18:26 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
