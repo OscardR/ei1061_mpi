@@ -1,4 +1,5 @@
 CC=mpicc
+INC_DIR=inc
 SRC_DIR=src
 BIN_DIR=bin
 SOURCES=$(wildcard $(SRC_DIR)/*.c)
@@ -11,7 +12,7 @@ all: $(OBJS)
 
 %:
 	@if [ ! -d $(BIN_DIR) ]; then mkdir $(BIN_DIR); fi # Crear directorio 'bin'
-	$(CC) $(CFLAGS) $(@).c -o $(BIN_DIR)/$(@F)
+	$(CC) $(CFLAGS) $(@).c -o $(BIN_DIR)/$(@F) -I$(INC_DIR)
 
 clean:
 	@rm -rf $(BIN_DIR) # Eliminar directorio 'bin' y sus contenidos

@@ -2,17 +2,19 @@
 #include <stdlib.h>
 #include <mpi.h>
 #include <math.h>
+#include "utils.h"
 
-/**
- * Entregable m04
+/*! @file mpi_m04.c
+ *  @brief Laboratorio M4
  *
- * Desarrolla una implementación eficiente de recogida global en MPI 
- * que utilice un esquema de concatenación. El procedimiento se 
- * desarrolla en p etapas. En cada etapa un proceso envía una parte
- * del vector a su vecino de la derecha y recibe otra parte de su 
- * vecino de la izquierda. En la primera etapa la parte enviada es la 
- * propia. En cada una de las siguientes p − 1 etapas, la parte 
- * enviada es la recibida en la etapa anterior.
+ * # Recogida global en MPI (III)
+ *
+ * Desarrolla una implementación eficiente de _recogida global_ en MPI que utilice 
+ * un esquema de **concatenación**. El procedimiento se desarrolla en _p_ etapas. En cada 
+ * etapa un proceso envía una parte del vector a su vecino de la derecha y recibe 
+ * otra parte de su vecino de la izquierda. En la primera etapa la parte enviada 
+ * es la propia. En cada una de las siguientes _p − 1_ etapas, la parte enviada es
+ * la recibida en la etapa anterior.
  */
 
 int mi_id, num_procs, dato, i, j, N, etapas;
@@ -20,31 +22,15 @@ int * vector;
 int MULTIPLO = 1;
 MPI_Status st;
 
-/**
- * Implementación de módulos negativos
+/*! Implementación del operador `%` teniendo en cuenta módulos negativos 
+ * 
+ * @param D Dividendo
+ * @param d Divisor
+ * @return \f$D \mod d\f$, teniendo en cuenta el signo de _D_. Por ejemplo, `mod(-1, 8)` devolverá `7`
  */
 int mod( int D, int d ) {
 	if ( D < 0 ) return (d + D) % d;
 	return D % d;
-}
-
-/**
- * Función para mostrar vectores
- */
-void muestra_vector( void ) {
-	printf( "Proceso [%d], vector: [", mi_id );
-	for ( i = 0; i < N; i++ ) {
-		printf( "%d", vector[i] );
-		if ( i < N - 1 ) printf( ", " );
-		else printf( "]\n" );
-	}
-}
-
-/**
- * Calcular etapas
- */
-int calcula_etapas( int n ) {
-	return n;
 }
 
 /**
@@ -87,10 +73,11 @@ int main( int argc, char ** argv ) {
 	MPI_Comm_size( MPI_COMM_WORLD, &num_procs );
 
 	if ( argc > 1 ) MULTIPLO = atoi( argv[1] );
+	printf("MULTIPLO: %d\n", MULTIPLO);
 
 	N = num_procs * MULTIPLO;
 	vector = ( int * ) malloc( N * sizeof( int ) );
-	etapas = calcula_etapas( num_procs );
+	etapas = num_procs;
 
 	// Init vector
 	for ( i = 0; i < N; i++ ) {
@@ -103,7 +90,7 @@ int main( int argc, char ** argv ) {
 	if( mi_id == 0 ) 
 		printf( "\nVectores antes:\n===============\n" );
 	MPI_Barrier( MPI_COMM_WORLD );
-	muestra_vector();
+	muestra_vector( vector, N, mi_id );
 	MPI_Barrier( MPI_COMM_WORLD );
 
 	if( mi_id == 0 ) 
@@ -136,7 +123,7 @@ int main( int argc, char ** argv ) {
 
 	if(mi_id == 0) printf("-------------\nEnvíos (por proceso): %d [Total: %d]\n\nVectores después:\n=================\n", envios, envios * num_procs);
 	MPI_Barrier(MPI_COMM_WORLD);
-	muestra_vector();
+	muestra_vector( vector, N, mi_id );
 
 	MPI_Finalize();
 	return 0;

@@ -1,18 +1,20 @@
 \hypertarget{mpi__m04_8c}{\section{src/mpi\-\_\-m04.c File Reference}
 \label{mpi__m04_8c}\index{src/mpi\-\_\-m04.\-c@{src/mpi\-\_\-m04.\-c}}
 }
+
+
+Laboratorio M4.  
+
+
 {\ttfamily \#include $<$stdio.\-h$>$}\\*
 {\ttfamily \#include $<$stdlib.\-h$>$}\\*
 {\ttfamily \#include $<$mpi.\-h$>$}\\*
 {\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{mpi__m04_8c_a5c32c8bd846ce1ebad44c1a1809fc067}{mod} (int D, int d)
-\item 
-void \hyperlink{mpi__m04_8c_ace124491c41c15a9e65c665dce45069b}{muestra\-\_\-vector} (void)
-\item 
-int \hyperlink{mpi__m04_8c_adf0baed9cc18303d35399f470c4116a5}{calcula\-\_\-etapas} (int n)
 \item 
 void \hyperlink{mpi__m04_8c_ab2d2acbbf92591928758d872cda1cfb6}{envio} (int dest, int ini)
 \item 
@@ -45,15 +47,13 @@ M\-P\-I\-\_\-\-Status \hyperlink{mpi__m04_8c_acd880fccdcf85d7453df9e53e49283d2}{
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Laboratorio M4. \subsection*{Recogida global en M\-P\-I (I\-I\-I)}
+
+Desarrolla una implementación eficiente de {\itshape recogida global} en M\-P\-I que utilice un esquema de {\bfseries concatenación}. El procedimiento se desarrolla en {\itshape p} etapas. En cada etapa un proceso envía una parte del vector a su vecino de la derecha y recibe otra parte de su vecino de la izquierda. En la primera etapa la parte enviada es la propia. En cada una de las siguientes {\itshape p − 1} etapas, la parte enviada es la recibida en la etapa anterior. 
+
 \subsection{Function Documentation}
-\hypertarget{mpi__m04_8c_adf0baed9cc18303d35399f470c4116a5}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!calcula\-\_\-etapas@{calcula\-\_\-etapas}}
-\index{calcula\-\_\-etapas@{calcula\-\_\-etapas}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
-\subsubsection[{calcula\-\_\-etapas}]{\setlength{\rightskip}{0pt plus 5cm}int calcula\-\_\-etapas (
-\begin{DoxyParamCaption}
-\item[{int}]{n}
-\end{DoxyParamCaption}
-)}}\label{mpi__m04_8c_adf0baed9cc18303d35399f470c4116a5}
-Calcular etapas \hypertarget{mpi__m04_8c_ab2d2acbbf92591928758d872cda1cfb6}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!envio@{envio}}
+\hypertarget{mpi__m04_8c_ab2d2acbbf92591928758d872cda1cfb6}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!envio@{envio}}
 \index{envio@{envio}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
 \subsubsection[{envio}]{\setlength{\rightskip}{0pt plus 5cm}void envio (
 \begin{DoxyParamCaption}
@@ -86,14 +86,19 @@ Contador de envíos \hypertarget{mpi__m04_8c_a5c32c8bd846ce1ebad44c1a1809fc067}{
 \item[{int}]{d}
 \end{DoxyParamCaption}
 )}}\label{mpi__m04_8c_a5c32c8bd846ce1ebad44c1a1809fc067}
-Implementación de módulos negativos \hypertarget{mpi__m04_8c_ace124491c41c15a9e65c665dce45069b}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!muestra\-\_\-vector@{muestra\-\_\-vector}}
-\index{muestra\-\_\-vector@{muestra\-\_\-vector}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
-\subsubsection[{muestra\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}void muestra\-\_\-vector (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)}}\label{mpi__m04_8c_ace124491c41c15a9e65c665dce45069b}
-Función para mostrar vectores \hypertarget{mpi__m04_8c_a44057b3a729ff976f631ed52b01788f7}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!recepcion@{recepcion}}
+Implementación del operador {\ttfamily \%} teniendo en cuenta módulos negativos
+
+
+\begin{DoxyParams}{Parameters}
+{\em D} & Dividendo \\
+\hline
+{\em d} & Divisor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$D \mod d$, teniendo en cuenta el signo de {\itshape D}. Por ejemplo, {\ttfamily mod(-\/1, 8)} devolverá {\ttfamily 7} 
+\end{DoxyReturn}
+\hypertarget{mpi__m04_8c_a44057b3a729ff976f631ed52b01788f7}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!recepcion@{recepcion}}
 \index{recepcion@{recepcion}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
 \subsubsection[{recepcion}]{\setlength{\rightskip}{0pt plus 5cm}void recepcion (
 \begin{DoxyParamCaption}
@@ -126,9 +131,7 @@ Realizar una recepción desde un proceso
 \hypertarget{mpi__m04_8c_a2f852d57f5c63ebea3f007e3360806c4}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!mi\-\_\-id@{mi\-\_\-id}}
 \index{mi\-\_\-id@{mi\-\_\-id}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
 \subsubsection[{mi\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int mi\-\_\-id}}\label{mpi__m04_8c_a2f852d57f5c63ebea3f007e3360806c4}
-Entregable m04
-
-Desarrolla una implementación eficiente de recogida global en M\-P\-I que utilice un esquema de concatenación. El procedimiento se desarrolla en p etapas. En cada etapa un proceso envía una parte del vector a su vecino de la derecha y recibe otra parte de su vecino de la izquierda. En la primera etapa la parte enviada es la propia. En cada una de las siguientes p − 1 etapas, la parte enviada es la recibida en la etapa anterior. \hypertarget{mpi__m04_8c_a62359957ca77ebf4d9d28cd0b99b901f}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!M\-U\-L\-T\-I\-P\-L\-O@{M\-U\-L\-T\-I\-P\-L\-O}}
+\hypertarget{mpi__m04_8c_a62359957ca77ebf4d9d28cd0b99b901f}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!M\-U\-L\-T\-I\-P\-L\-O@{M\-U\-L\-T\-I\-P\-L\-O}}
 \index{M\-U\-L\-T\-I\-P\-L\-O@{M\-U\-L\-T\-I\-P\-L\-O}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
 \subsubsection[{M\-U\-L\-T\-I\-P\-L\-O}]{\setlength{\rightskip}{0pt plus 5cm}int M\-U\-L\-T\-I\-P\-L\-O = 1}}\label{mpi__m04_8c_a62359957ca77ebf4d9d28cd0b99b901f}
 \hypertarget{mpi__m04_8c_a7722c8ecbb62d99aee7ce68b1752f337}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!N@{N}}
