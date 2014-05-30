@@ -1,0 +1,81 @@
+\hypertarget{mpi__m01_8c}{\section{src/mpi\-\_\-m01.c File Reference}
+\label{mpi__m01_8c}\index{src/mpi\-\_\-m01.\-c@{src/mpi\-\_\-m01.\-c}}
+}
+
+
+Laboratorio M1.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$mpi.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mpi__m01_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Laboratorio M1. \subsection*{M\-P\-I}
+
+
+\begin{DoxyItemize}
+\item Compilar y ejecutar el programa de ejemplo de M\-P\-I en 4 nodos de patan.
+\item Desarrolla, compila y ejecuta un simple test de ping-\/pong M\-P\-I en 2 nodos de patan. \subsubsection*{Comunicación en anillo.}
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\hypertarget{mpi__m01_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{mpi\-\_\-m01.\-c@{mpi\-\_\-m01.\-c}!main@{main}}
+\index{main@{main}!mpi_m01.c@{mpi\-\_\-m01.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{mpi__m01_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+Función main. Inicializa M\-P\-I y ejecuta el algoritmo de envío en anillo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & parámetro automático con el número de argumentos recibidos desde el C\-L\-I \\
+\hline
+{\em argv} & \mbox{[}1\mbox{]} el primer parámetro del C\-L\-I especifica el número de elementos del vector que pertenecen a cada proceso ({\ttfamily M\-U\-L\-T\-I\-P\-L\-O}). Por defecto {\ttfamily M\-U\-L\-T\-I\-P\-L\-O} es 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si todo ha ido bien. 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item Inicializa las variables necesarias
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Inicializa M\-P\-I
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Imprime el identificador de cada proceso
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Inicializa {\ttfamily dato} a 0
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Cada vez que envía el dato, se incrementa en 1 su valor
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Imprime el identificador de cada proceso, junto con su valor para {\ttfamily dato}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Finaliza M\-P\-I y devuelve 0. 
+\end{DoxyItemize}

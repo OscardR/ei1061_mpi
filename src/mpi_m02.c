@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mpi.h>
+#include "utils.h"
 
 /*! @file mpi_m02.c
  *  @brief Laboratorio M2.1
@@ -32,8 +33,8 @@
  * que p es una potencia de 2.
  */
 
-//! Define cuantos elementos del vector posee cada proceso.
-#define MULTIPLO 4
+//! Define cuantos elementos del vector posee cada proceso. El valor por defecto es 1.
+int MULTIPLO = 1;
 
 //! Número que identifica a cada proceso. Es asignado automáticamente por MPI al ejecutar con `mpirun`.
 int mi_id;
@@ -46,17 +47,6 @@ int i;
 
 /*! Vector con los valores a repartir entre procesos. */
 int * vector;
-
-/*! Muestra el vector del proceso actual por pantalla, junto al identificador del proceso */
-void muestra_vector(void) {
-	printf("Proceso [%d], vector: [", mi_id);
-		int N = num_procs * MULTIPLO;
-	for (i = 0; i < N; i++) {
-		printf("%d", vector[i]);
-		if (i < N - 1) printf(", ");
-		else printf("]\n");
-	}
-}
 
 /*! Función main.
  * Inicializa MPI y ejecuta el algoritmo de **difusión lineal**. 
@@ -75,13 +65,14 @@ int main( int argc, char ** argv ) {
 	MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
 
 	//! - Se inicializa el vector y se rellena el área de cada proceso con un valor igual al ID del proceso.
-	vector = (int *)malloc(num_procs * MULTIPLO * sizeof(int));
+	int N = MULTIPLO * num_procs;
+	vector = (int *)malloc(N * sizeof(int));
 	for (i = 0; i < MULTIPLO; i++) {
 		vector[mi_id * MULTIPLO + i] = mi_id;
 	}
 
 	//! - Cada proceso muestra su vector.
-	muestra_vector();
+	muestra_vector( vector, N, mi_id );
 
 	//! - Cada proceso hace un _broadcast_ al resto de procesos con su trozo del vector.
 	for (i = 0; i < num_procs; i++) {
@@ -89,7 +80,7 @@ int main( int argc, char ** argv ) {
 	}
 
 	//! - Cada proceso vuelve a mostrar su vector.
-	muestra_vector();
+	muestra_vector( vector, N, mi_id );
 
 	//! - Se finaliza el sistema MPI y se retorna 0.
 	MPI_Finalize();

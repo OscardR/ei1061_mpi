@@ -1,4 +1,4 @@
-Ejemplo de ejecución
+Ejemplo de ejecución {#ejemplo}
 ====================
 
 Para ejecutar el código con 8 procesos y 2 elementos del vector para cada proceso (el vector tendría en total 16 enteros), este es el comando:

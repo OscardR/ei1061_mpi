@@ -1,0 +1,155 @@
+\hypertarget{mpi__m03_8c}{\section{src/mpi\-\_\-m03.c File Reference}
+\label{mpi__m03_8c}\index{src/mpi\-\_\-m03.\-c@{src/mpi\-\_\-m03.\-c}}
+}
+
+
+Laboratorio M2.\-2.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$mpi.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mpi__m03_8c_adf0baed9cc18303d35399f470c4116a5}{calcula\-\_\-etapas} (int n)
+\item 
+int \hyperlink{mpi__m03_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mpi__m03_8c_a2f852d57f5c63ebea3f007e3360806c4}{mi\-\_\-id}
+\item 
+int \hyperlink{mpi__m03_8c_ab00de16e9393bbf005012413043ea74d}{num\-\_\-procs}
+\item 
+int \hyperlink{mpi__m03_8c_aadf75c541436fefd71b2cba8d25a75fe}{etapas}
+\item 
+int $\ast$ \hyperlink{mpi__m03_8c_ae086787f574c1a13b95728ca3cddbc08}{vector}
+\item 
+int \hyperlink{mpi__m03_8c_a62359957ca77ebf4d9d28cd0b99b901f}{M\-U\-L\-T\-I\-P\-L\-O} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Laboratorio M2.\-2. \subsection*{Recogida global en M\-P\-I (I\-I)}
+
+Desarrolla una implementación de {\itshape recogida global} en M\-P\-I en la que {\itshape p} procesos deben conseguir una copia de todos los elementos de un vector de {\itshape n} datos inicialmente repartido a partes iguales entre todos ellos (es decir, cada proceso tiene inicialmente {\itshape n/p} elementos del vector y, para simplificar el problema, se supondrá que {\itshape n} es múltiplo de {\itshape p}). Se trata de la misma operación que implementa la función {\ttfamily M\-P\-I\-\_\-\-Allgather} de la biblioteca M\-P\-I.
+
+Dicha difusión debe realizarse utilizando las siguiente estrategias\-:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Difusión lineal.} Uno tras otro, cada uno de los procesos envía su parte del vector a los restantes procesos mediante una operación de difusión de M\-P\-I (M\-P\-I Bcast).
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Doblado recursivo.} Este algoritmo funciona en $log_2 p$ etapas. En la primera etapa, aquellos procesos que están a una distancia de 1 (en relación a su identificador) intercambian sus partes del vector. En la segunda etapa, los procesos que están a una distancia 2 intercambian sus partes del vector (incluidas aquellas que recibieron en la etapa anterior). En la tercera etapa realizarán el intercambio aquellos procesos que están a una distancia 4 y así sucesivamente. Para simplificar el problema, se supondrá que p es una potencia de 2. 
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\hypertarget{mpi__m03_8c_adf0baed9cc18303d35399f470c4116a5}{\index{mpi\-\_\-m03.\-c@{mpi\-\_\-m03.\-c}!calcula\-\_\-etapas@{calcula\-\_\-etapas}}
+\index{calcula\-\_\-etapas@{calcula\-\_\-etapas}!mpi_m03.c@{mpi\-\_\-m03.\-c}}
+\subsubsection[{calcula\-\_\-etapas}]{\setlength{\rightskip}{0pt plus 5cm}int calcula\-\_\-etapas (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{mpi__m03_8c_adf0baed9cc18303d35399f470c4116a5}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & número de procesos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+número de etapas. Equivale a $\log_{2} n$ 
+\end{DoxyReturn}
+\hypertarget{mpi__m03_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{mpi\-\_\-m03.\-c@{mpi\-\_\-m03.\-c}!main@{main}}
+\index{main@{main}!mpi_m03.c@{mpi\-\_\-m03.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{mpi__m03_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+Función main. Inicializa M\-P\-I y ejecuta el algoritmo de {\bfseries doblado recursivo}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & parámetro automático con el número de argumentos recibidos desde el C\-L\-I \\
+\hline
+{\em argv} & {\ttfamily \mbox{[}1\mbox{]}} el primer parámetro del C\-L\-I especifica el número de elementos del vector que pertenecen a cada proceso ({\ttfamily M\-U\-L\-T\-I\-P\-L\-O}). Por defecto {\ttfamily M\-U\-L\-T\-I\-P\-L\-O} es 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si todo ha ido bien. 
+\end{DoxyReturn}
+Inicializa el vector\-:
+
+
+\begin{DoxyItemize}
+\item Cada proceso tiene su identificador como valores de su tramo del vector y el resto de valores serán -\/1.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Cada proceso imprime su vector.
+\end{DoxyItemize}
+
+Se inicializan variables para el algoritmo, y comienza el bucle de etapas.
+
+
+\begin{DoxyItemize}
+\item Se calcula el tamaño de la ventana de envíos de la etapa actual. La fórmula es\-:
+
+$S=2^e$, teniendo que e es el número de etapa actual.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Se calcula si el proceso es origen o destino en función de su identificador. Un proceso origen primero E\-N\-VÍ\-A y luego R\-E\-C\-I\-B\-E. Un proceso destino primero R\-E\-C\-I\-B\-E y luego E\-N\-VÍ\-A.
+
+Se calcula en base a la siguiente fórmula\-:
+
+$i\mod(S\cdot 2)<S$, teniendo que i es el número del proceso, y S el tamaño de la ventana de envíos de la etapa actual.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Si es origen\-:} Se realiza el envío primero, imprimiendo por pantalla el nodo que envía y el que recibe, y la parte del vector que se envía.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Si es destino\-:} Se realiza la recepción primero, imprimiendo por pantalla el nodo que envía y el que recibe, y la parte del vector que se envía.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Cada proceso muestra su vector, con los elementos ya compartidos.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Finaliza M\-P\-I y retorna el valor 0. 
+\end{DoxyItemize}
+
+\subsection{Variable Documentation}
+\hypertarget{mpi__m03_8c_aadf75c541436fefd71b2cba8d25a75fe}{\index{mpi\-\_\-m03.\-c@{mpi\-\_\-m03.\-c}!etapas@{etapas}}
+\index{etapas@{etapas}!mpi_m03.c@{mpi\-\_\-m03.\-c}}
+\subsubsection[{etapas}]{\setlength{\rightskip}{0pt plus 5cm}int etapas}}\label{mpi__m03_8c_aadf75c541436fefd71b2cba8d25a75fe}
+Número de etapas de la compartición de elementos. Se calcula como $\log_{2} N$, siendo N el número de procesos. \hypertarget{mpi__m03_8c_a2f852d57f5c63ebea3f007e3360806c4}{\index{mpi\-\_\-m03.\-c@{mpi\-\_\-m03.\-c}!mi\-\_\-id@{mi\-\_\-id}}
+\index{mi\-\_\-id@{mi\-\_\-id}!mpi_m03.c@{mpi\-\_\-m03.\-c}}
+\subsubsection[{mi\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int mi\-\_\-id}}\label{mpi__m03_8c_a2f852d57f5c63ebea3f007e3360806c4}
+Número que identifica a cada proceso. Es asignado automáticamente por M\-P\-I al ejecutar con mpirun. \hypertarget{mpi__m03_8c_a62359957ca77ebf4d9d28cd0b99b901f}{\index{mpi\-\_\-m03.\-c@{mpi\-\_\-m03.\-c}!M\-U\-L\-T\-I\-P\-L\-O@{M\-U\-L\-T\-I\-P\-L\-O}}
+\index{M\-U\-L\-T\-I\-P\-L\-O@{M\-U\-L\-T\-I\-P\-L\-O}!mpi_m03.c@{mpi\-\_\-m03.\-c}}
+\subsubsection[{M\-U\-L\-T\-I\-P\-L\-O}]{\setlength{\rightskip}{0pt plus 5cm}int M\-U\-L\-T\-I\-P\-L\-O = 1}}\label{mpi__m03_8c_a62359957ca77ebf4d9d28cd0b99b901f}
+Número de elementos del vector que posee cada proceso. Este parámetro puede cambiarse especificando otro valor como primer parámetro desde la línea de comandos \hypertarget{mpi__m03_8c_ab00de16e9393bbf005012413043ea74d}{\index{mpi\-\_\-m03.\-c@{mpi\-\_\-m03.\-c}!num\-\_\-procs@{num\-\_\-procs}}
+\index{num\-\_\-procs@{num\-\_\-procs}!mpi_m03.c@{mpi\-\_\-m03.\-c}}
+\subsubsection[{num\-\_\-procs}]{\setlength{\rightskip}{0pt plus 5cm}int num\-\_\-procs}}\label{mpi__m03_8c_ab00de16e9393bbf005012413043ea74d}
+Número de procesos. Es establecido automáticamente por M\-P\-I al ejecutar con mpirun. \hypertarget{mpi__m03_8c_ae086787f574c1a13b95728ca3cddbc08}{\index{mpi\-\_\-m03.\-c@{mpi\-\_\-m03.\-c}!vector@{vector}}
+\index{vector@{vector}!mpi_m03.c@{mpi\-\_\-m03.\-c}}
+\subsubsection[{vector}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ vector}}\label{mpi__m03_8c_ae086787f574c1a13b95728ca3cddbc08}
+Vector con los valores a repartir entre procesos. 

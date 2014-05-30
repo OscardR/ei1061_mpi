@@ -1,0 +1,5 @@
+#!/bin/bash
+echo binary: $1
+echo np: $2
+echo args: $3
+mpirun -np $2 $1 $3
