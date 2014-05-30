@@ -74,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +90,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -103,22 +102,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;mpi.h&gt;</code><br/>
+<code>#include &quot;utils.h&quot;</code><br/>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a97662895b2bb5bc96167d7892929b80e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#a97662895b2bb5bc96167d7892929b80e">MULTIPLO</a>&#160;&#160;&#160;4</td></tr>
-<tr class="memdesc:a97662895b2bb5bc96167d7892929b80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define cuantos elementos del vector posee cada proceso.  <a href="#a97662895b2bb5bc96167d7892929b80e">More...</a><br/></td></tr>
-<tr class="separator:a97662895b2bb5bc96167d7892929b80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ace124491c41c15a9e65c665dce45069b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#ace124491c41c15a9e65c665dce45069b">muestra_vector</a> (void)</td></tr>
-<tr class="separator:ace124491c41c15a9e65c665dce45069b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a62359957ca77ebf4d9d28cd0b99b901f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#a62359957ca77ebf4d9d28cd0b99b901f">MULTIPLO</a> = 1</td></tr>
+<tr class="memdesc:a62359957ca77ebf4d9d28cd0b99b901f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define cuantos elementos del vector posee cada proceso. El valor por defecto es 1.  <a href="#a62359957ca77ebf4d9d28cd0b99b901f">More...</a><br/></td></tr>
+<tr class="separator:a62359957ca77ebf4d9d28cd0b99b901f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f852d57f5c63ebea3f007e3360806c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m02_8c.html#a2f852d57f5c63ebea3f007e3360806c4">mi_id</a></td></tr>
 <tr class="memdesc:a2f852d57f5c63ebea3f007e3360806c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número que identifica a cada proceso. Es asignado automáticamente por MPI al ejecutar con <code>mpirun</code>.  <a href="#a2f852d57f5c63ebea3f007e3360806c4">More...</a><br/></td></tr>
 <tr class="separator:a2f852d57f5c63ebea3f007e3360806c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,22 +137,7 @@ Variables</h2></td></tr>
 <ul>
 <li><b>Doblado recursivo.</b> Este algoritmo funciona en \(log_2 p\) etapas. En la primera etapa, aquellos procesos que están a una distancia de 1 (en relación a su identificador) intercambian sus partes del vector. En la segunda etapa, los procesos que están a una distancia 2 intercambian sus partes del vector (incluidas aquellas que recibieron en la etapa anterior). En la tercera etapa realizarán el intercambio aquellos procesos que están a una distancia 4 y así sucesivamente. Para simplificar el problema, se supondrá que p es una potencia de 2. </li>
 </ul>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a97662895b2bb5bc96167d7892929b80e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MULTIPLO&#160;&#160;&#160;4</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Define cuantos elementos del vector posee cada proceso. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <div class="memitem">
 <div class="memproto">
@@ -212,23 +192,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ace124491c41c15a9e65c665dce45069b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void muestra_vector </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Muestra el vector del proceso actual por pantalla, junto al identificador del proceso </p>
-
-</div>
-</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a class="anchor" id="acb559820d9ca11295b4500f179ef6392"></a>
 <div class="memitem">
@@ -255,6 +218,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Número que identifica a cada proceso. Es asignado automáticamente por MPI al ejecutar con <code>mpirun</code>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a62359957ca77ebf4d9d28cd0b99b901f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MULTIPLO = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define cuantos elementos del vector posee cada proceso. El valor por defecto es 1. </p>
 
 </div>
 </div>
@@ -288,7 +265,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 30 2014 18:35:40 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 30 2014 18:43:48 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
