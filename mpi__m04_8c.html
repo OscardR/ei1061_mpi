@@ -214,15 +214,18 @@ Variables</h2></td></tr>
 <ul>
 <li>Cada proceso tiene su identificador como valores de su tramo del vector y el resto de valores serán 0.</li>
 </ul>
-<ul>
-<li>Cada proceso imprime su vector.</li>
-</ul>
+<p>Cada proceso imprime su vector.</p>
 <p>Se inicializan las variables de control de comunicaciones.</p>
 <p>Comienza el bucle con tantas etapas como procesos:</p>
 <ul>
 <li><p class="startli">Se decide quién es el proceso del cual vamos a recibir datos y cuál será el proceso al cual enviaremos datos con la siguiente fórmula:</p>
-<p class="startli">\(p_{origen} = (i - 1) \mod n\) </p>
+<p class="startli">\(p_{origen} = (i - 1) \mod n\) \(p_{destino} = (i + 1) \mod n\) </p>
 <pre class="fragment">     siendo _i_ el número del proceso actual, y _n_ el número de procesos.</pre></li>
+</ul>
+<ul>
+<li><p class="startli">Se decide la sección del vector que se va a enviar y la que se va a recibir, mediante la siguiente fórmula:</p>
+<p class="startli">\(s_{envío} = (i - e) \mod n\) \(s_{recepción} = (i - e - 1) \mod n\) siendo <em>i</em> el número del proceso actual, <em>e</em> la etapa actual y <em>n</em> el número de procesos.</p>
+</li>
 </ul>
 
 </div>
@@ -420,7 +423,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 5 2014 00:52:02 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 5 2014 00:57:21 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
