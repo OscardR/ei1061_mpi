@@ -1,4 +1,4 @@
-# Gráficas de Rendimiento
+Gráficas de Rendimiento
 =======================
 
 Medidas en segundos de 4 procesos AMD Phenom II 965@3.40 GHz x4 OC 3.6GHz 4GB RAM ddr2 800 MHZ
@@ -18,7 +18,7 @@ Medidas en segundos de 4 procesos AMD Phenom II 965@3.40 GHz x4 OC 3.6GHz 4GB RA
 ### Concatenación
 ![Algoritmo de concatenación](img/m04.png)
 
--------------------------------------------------------------------
+=========================
 
 Medidas en segundos de 8 procesos Intel i7@2.20 GHz x8 8GB RAM ddr3 1600 MHZ
 
