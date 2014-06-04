@@ -2,11 +2,13 @@
 #include <mpi.h>
 
 /*!@file mpi_m01.c
- * @brief Laboratorio M1
+ * @brief Laboratorio M1: Introducción a MPI - Comunicación en Anillo
  *
- * # MPI
+ * # Introducción a MPI
+ *
  * - Compilar y ejecutar el programa de ejemplo de MPI en 4 nodos de patan.
  * - Desarrolla, compila y ejecuta un simple test de ping-pong MPI en 2 nodos de patan.
+ *
  * ## Comunicación en anillo. 
  */
 

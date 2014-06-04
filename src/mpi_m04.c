@@ -5,7 +5,7 @@
 #include "utils.h"
 
 /*! @file mpi_m04.c
- *  @brief Laboratorio M4
+ *  @brief Laboratorio M4: Recogida global en MPI (III) - Concatenación
  *
  * # Recogida global en MPI (III)
  *
@@ -34,7 +34,7 @@ int * vector;
 /*! Número de elementos del vector que posee cada proceso. Este parámetro puede cambiarse especificando otro valor como primer parámetro desde la línea de comandos */
 int MULTIPLO = 1;
 
-/*! Estado de envíos MPI global para se usado desde métodos de envío y recepción */
+/*! Estado de envíos MPI global para ser usado desde métodos de envío y recepción. */
 MPI_Status st;
 
 /*! Implementación del operador `%` teniendo en cuenta módulos negativos 

@@ -3,7 +3,7 @@
 }
 
 
-Laboratorio M4.  
+Laboratorio M4\-: Recogida global en M\-P\-I (I\-I\-I) -\/ Concatenación.  
 
 
 {\ttfamily \#include $<$stdio.\-h$>$}\\*
@@ -40,7 +40,7 @@ M\-P\-I\-\_\-\-Status \hyperlink{mpi__m04_8c_acd880fccdcf85d7453df9e53e49283d2}{
 
 
 \subsection{Detailed Description}
-Laboratorio M4. \subsection*{Recogida global en M\-P\-I (I\-I\-I)}
+Laboratorio M4\-: Recogida global en M\-P\-I (I\-I\-I) -\/ Concatenación. \subsection*{Recogida global en M\-P\-I (I\-I\-I)}
 
 Desarrolla una implementación eficiente de {\itshape recogida global} en M\-P\-I que utilice un esquema de {\bfseries concatenación}. El procedimiento se desarrolla en {\itshape p} etapas. En cada etapa un proceso envía una parte del vector a su vecino de la derecha y recibe otra parte de su vecino de la izquierda. En la primera etapa la parte enviada es la propia. En cada una de las siguientes {\itshape p − 1} etapas, la parte enviada es la recibida en la etapa anterior. 
 
@@ -179,7 +179,7 @@ Número de elementos del vector que posee cada proceso. Este parámetro puede ca
 Número de procesos. Es establecido automáticamente por M\-P\-I al ejecutar con mpirun. \hypertarget{mpi__m04_8c_acd880fccdcf85d7453df9e53e49283d2}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!st@{st}}
 \index{st@{st}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
 \subsubsection[{st}]{\setlength{\rightskip}{0pt plus 5cm}M\-P\-I\-\_\-\-Status st}}\label{mpi__m04_8c_acd880fccdcf85d7453df9e53e49283d2}
-Estado de envíos M\-P\-I global para se usado desde métodos de envío y recepción \hypertarget{mpi__m04_8c_ae086787f574c1a13b95728ca3cddbc08}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!vector@{vector}}
+Estado de envíos M\-P\-I global para ser usado desde métodos de envío y recepción. \hypertarget{mpi__m04_8c_ae086787f574c1a13b95728ca3cddbc08}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!vector@{vector}}
 \index{vector@{vector}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
 \subsubsection[{vector}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ vector}}\label{mpi__m04_8c_ae086787f574c1a13b95728ca3cddbc08}
 Vector con los valores a repartir entre procesos. 

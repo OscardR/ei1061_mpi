@@ -4,7 +4,7 @@
 #include "utils.h"
 
 /*! @file mpi_m02.c
- *  @brief Laboratorio M2.1
+ *  @brief Laboratorio M2.1: Recogida global en MPI (I) - Difusión Lineal
  *
  * # Recogida global en MPI (I)
  *

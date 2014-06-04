@@ -5,7 +5,7 @@
 #include "utils.h"
 
 /*! @file mpi_m03.c
- *  @brief Laboratorio M2.2
+ *  @brief Laboratorio M2.2: Recogida global en MPI (II) - Doblado Recursivo
  *
  * # Recogida global en MPI (II)
  *
