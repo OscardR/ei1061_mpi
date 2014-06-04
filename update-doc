@@ -1,7 +1,8 @@
 #!/bin/bash
 
-remote=https
-branch=gh-pages
+#remote=https
+#branch=gh-pages
+
 doxygen mpi.dox
 cd gh-pages
 git add .

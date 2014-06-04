@@ -34,6 +34,7 @@ int * vector;
 /*! Número de elementos del vector que posee cada proceso. Este parámetro puede cambiarse especificando otro valor como primer parámetro desde la línea de comandos */
 int MULTIPLO = 1;
 
+/*! Estado de envíos MPI global para se usado desde métodos de envío y recepción */
 MPI_Status st;
 
 /*! Implementación del operador `%` teniendo en cuenta módulos negativos 
@@ -135,9 +136,9 @@ int main( int argc, char ** argv ) {
 		 * fórmula:
 		 *
 		 * \f$p_{origen} = (i - 1) \mod n\f$
-		 * \f$p_{destino} = (i + 1) \mod n\f$
 		 *
-		 * siendo _i_ el número del proceso actual, y _n_ el número de procesos.
+		 * \f$p_{destino} = (i + 1) \mod n\f$
+		 * , siendo _i_ el número del proceso actual, y _n_ el número de procesos.
 		 */
 		orig = mod((mi_id - 1), num_procs) ;
 		dest = (mi_id + 1) % num_procs;
@@ -146,8 +147,9 @@ int main( int argc, char ** argv ) {
 		 * va a recibir, mediante la siguiente fórmula:
 		 *
 		 * \f$s_{envío} = (i - e) \mod n\f$
+		 *
 		 * \f$s_{recepción} = (i - e - 1) \mod n\f$
-		 * siendo _i_ el número del proceso actual, _e_ la etapa actual y _n_ 
+		 * , siendo _i_ el número del proceso actual, _e_ la etapa actual y _n_ 
 		 * el número de procesos.
 		 */
 		secc_env = mod((mi_id - e), num_procs);

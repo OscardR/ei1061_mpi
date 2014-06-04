@@ -97,15 +97,18 @@ Comienza el bucle con tantas etapas como procesos\-:
 \begin{DoxyItemize}
 \item Se decide quién es el proceso desde el cual vamos a recibir datos y cuál será el proceso al cual enviaremos datos con la siguiente fórmula\-:
 
-$p_{origen} = (i - 1) \mod n$ $p_{destino} = (i + 1) \mod n$ \begin{DoxyVerb}     siendo _i_ el número del proceso actual, y _n_ el número de procesos.\end{DoxyVerb}
+$p_{origen} = (i - 1) \mod n$
 
+$p_{destino} = (i + 1) \mod n$ , siendo {\itshape i} el número del proceso actual, y {\itshape n} el número de procesos.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
 \item Se decide la sección del vector que se va a enviar y la que se va a recibir, mediante la siguiente fórmula\-:
 
-$s_{envío} = (i - e) \mod n$ $s_{recepción} = (i - e - 1) \mod n$ siendo {\itshape i} el número del proceso actual, {\itshape e} la etapa actual y {\itshape n} el número de procesos.
+$s_{envío} = (i - e) \mod n$
+
+$s_{recepción} = (i - e - 1) \mod n$ , siendo {\itshape i} el número del proceso actual, {\itshape e} la etapa actual y {\itshape n} el número de procesos.
 \end{DoxyItemize}
 
 
@@ -176,7 +179,7 @@ Número de elementos del vector que posee cada proceso. Este parámetro puede ca
 Número de procesos. Es establecido automáticamente por M\-P\-I al ejecutar con mpirun. \hypertarget{mpi__m04_8c_acd880fccdcf85d7453df9e53e49283d2}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!st@{st}}
 \index{st@{st}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
 \subsubsection[{st}]{\setlength{\rightskip}{0pt plus 5cm}M\-P\-I\-\_\-\-Status st}}\label{mpi__m04_8c_acd880fccdcf85d7453df9e53e49283d2}
-\hypertarget{mpi__m04_8c_ae086787f574c1a13b95728ca3cddbc08}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!vector@{vector}}
+Estado de envíos M\-P\-I global para se usado desde métodos de envío y recepción \hypertarget{mpi__m04_8c_ae086787f574c1a13b95728ca3cddbc08}{\index{mpi\-\_\-m04.\-c@{mpi\-\_\-m04.\-c}!vector@{vector}}
 \index{vector@{vector}!mpi_m04.c@{mpi\-\_\-m04.\-c}}
 \subsubsection[{vector}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ vector}}\label{mpi__m04_8c_ae086787f574c1a13b95728ca3cddbc08}
 Vector con los valores a repartir entre procesos. 
