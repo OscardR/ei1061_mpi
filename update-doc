@@ -1,10 +1,12 @@
 #!/bin/bash
 
+remote=https
+branch=gh-pages
 doxygen mpi.dox
 cd gh-pages
 git add .
 if [[ "$1" -ne "" ]]; then
   git commit -a -m $1; 
 else git commit -a -m "Generic Dox Update"; fi
-git push
+echo -e "OscardR\n" | git push $remote $branch
 cd ..
