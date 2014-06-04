@@ -170,8 +170,8 @@ Variables</h2></td></tr>
 <p>Realizar un envío a un proceso </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dest</td><td>{int} el id del proceso destino </td></tr>
-    <tr><td class="paramname">ini</td><td>{int} el segmento del vector </td></tr>
+    <tr><td class="paramname">dest</td><td>El id del proceso destino </td></tr>
+    <tr><td class="paramname">ini</td><td>El segmento del vector </td></tr>
   </table>
   </dd>
 </dl>
@@ -201,8 +201,24 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Variables de control de comunicaciones</p>
-<p>Contador de envíos </p>
+<p>Función main. Inicializa MPI y ejecuta el algoritmo de <b>concatenación</b>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>parámetro automático con el número de argumentos recibidos desde el CLI </td></tr>
+    <tr><td class="paramname">argv</td><td><code>[1]</code> el primer parámetro del CLI especifica el número de elementos del vector que pertenecen a cada proceso (<code>MULTIPLO</code>). Por defecto <code>MULTIPLO</code> es 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 si todo ha ido bien. </dd></dl>
+<p>Inicializa el vector:</p>
+<ul>
+<li>Cada proceso tiene su identificador como valores de su tramo del vector y el resto de valores serán 0.</li>
+</ul>
+<ul>
+<li>Cada proceso imprime su vector.</li>
+</ul>
+<p>Se inicializan las variables de control de comunicaciones.</p>
+<p>Comienza el bucle con tantas etapas como procesos: </p>
 
 </div>
 </div>
@@ -267,8 +283,8 @@ Variables</h2></td></tr>
 <p>Realizar una recepción desde un proceso </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">orig</td><td>{int} el id del proceso origen </td></tr>
-    <tr><td class="paramname">ini</td><td>{int} el segmento del vector </td></tr>
+    <tr><td class="paramname">orig</td><td>El id del proceso origen </td></tr>
+    <tr><td class="paramname">ini</td><td>El segmento del vector </td></tr>
   </table>
   </dd>
 </dl>
@@ -399,7 +415,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 4 2014 20:02:32 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 5 2014 00:51:25 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
