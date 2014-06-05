@@ -8,11 +8,12 @@
  *
  * - Compilar y ejecutar el programa de ejemplo de MPI en 4 nodos de patan.
  * - Desarrolla, compila y ejecuta un simple test de ping-pong MPI en 2 nodos de patan.
- *
- * ## Comunicación en anillo. 
  */
 
 /*! Función main.
+ *
+ * ## Comunicación en anillo. 
+ *
  * Inicializa MPI y ejecuta el algoritmo de envío en anillo. 
  *
  * @param argc parámetro automático con el número de argumentos recibidos desde el CLI

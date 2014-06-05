@@ -82,6 +82,9 @@ void recepcion(int orig, int secc_env) {
 }
 
 /*! Función main.
+ *
+ * ## Concatenación
+ *
  * Inicializa MPI y ejecuta el algoritmo de **concatenación**. 
  *
  * @param argc parámetro automático con el número de argumentos recibidos desde el CLI

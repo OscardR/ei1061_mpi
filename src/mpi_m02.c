@@ -49,6 +49,9 @@ int i;
 int * vector;
 
 /*! Función main.
+ *
+ * ## Difusión Lineal
+ *
  * Inicializa MPI y ejecuta el algoritmo de **difusión lineal**. 
  *
  * @param argc parámetro automático con el número de argumentos recibidos desde el CLI

@@ -61,6 +61,9 @@ int calcula_etapas( int n ) {
 }
 
 /*! Función main.
+ *
+ * ## Doblado Recursivo
+ *
  * Inicializa MPI y ejecuta el algoritmo de **doblado recursivo**. 
  *
  * @param argc parámetro automático con el número de argumentos recibidos desde el CLI
