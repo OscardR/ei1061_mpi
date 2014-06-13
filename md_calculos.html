@@ -89,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="caption">
 T(n)=alpha+beta·n</div></div>
  <h2>Broadcast de MPI</h2>
+<p>Un proceso envía un dato al resto de procesos. En la imagen, el proceso 0 hace de raíz, y el esquema muestra como el dato del proceso 0 se propaga a todos los procesos de forma logarítmica.</p>
 <div class="image">
 <img src="broadcast.png" alt="broadcast.png"/>
 <div class="caption">
@@ -105,12 +106,17 @@ Difusión por MPI Broadcast</div></div>
 <h2>Difusión por doblado recursivo</h2>
 <p>En cada etapa hay <em>n</em> envíos de tamaño exponencialmente proporcional al número de etapa, y el número de etapas es logarítmico.</p>
 <div class="image">
+<img src="recursivo.png" alt="recursivo.png"/>
+<div class="caption">
+Difusión por doblado recursivo</div></div>
+<p> Tiempo de difusión teórico usando el algoritmo de doblado recursivo:</p>
+<div class="image">
 <img src="tdr.png" alt="tdr.png"/>
 </div>
  </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 13 2014 19:55:36 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 13 2014 20:15:19 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
