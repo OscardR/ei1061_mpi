@@ -28,7 +28,7 @@ T_{BL}(n)=p\cdot \log_2{p}\cdot(\alpha+\beta\cdot n)
 
 ## Difusión por doblado recursivo
 
-En cada etapa hay _n_ envíos de tamaño exponencialmente proporcional al número de etapa, y el número de etapas es logarítmico.
+En cada etapa hay _p_ envíos de tamaño exponencialmente proporcional al número de etapa, y el número de etapas es logarítmico.
 
 ![Difusión por doblado recursivo](img/recursivo.png)
 
@@ -43,4 +43,18 @@ T_{DR}(n)=\sum_{e=0}^{\log_2{p}}2\cdot(\alpha+\beta\cdot 2^e\cdot n)
 T  (n) = \    2 (alpha + beta 2 n)
  DR      /__
         e = 0
+-->
+
+## Difusión por concatenación
+
+En cada etapa hay _p_ envíos de tamaño base, y el número de etapas es lineal.
+
+![Difusión por concatenación](img/concatenacion.png)
+
+Tiempo de difusión teórico usando el algoritmo de concatenación:
+
+![](img/tc.png)
+
+<!---
+T_C(n)=(\alpha+\beta\cdot n)\cdot(p-1)
 -->
