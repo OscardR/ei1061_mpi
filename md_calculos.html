@@ -104,7 +104,7 @@ Difusión por MPI Broadcast</div></div>
 <img src="tbl.png" alt="tbl.png"/>
 </div>
 <h2>Difusión por doblado recursivo</h2>
-<p>En cada etapa hay <em>n</em> envíos de tamaño exponencialmente proporcional al número de etapa, y el número de etapas es logarítmico.</p>
+<p>En cada etapa hay <em>p</em> envíos de tamaño exponencialmente proporcional al número de etapa, y el número de etapas es logarítmico.</p>
 <div class="image">
 <img src="recursivo.png" alt="recursivo.png"/>
 <div class="caption">
@@ -113,10 +113,20 @@ Difusión por doblado recursivo</div></div>
 <div class="image">
 <img src="tdr.png" alt="tdr.png"/>
 </div>
+<h2>Difusión por concatenación</h2>
+<p>En cada etapa hay <em>p</em> envíos de tamaño base, y el número de etapas es lineal.</p>
+<div class="image">
+<img src="concatenacion.png" alt="concatenacion.png"/>
+<div class="caption">
+Difusión por concatenación</div></div>
+<p> Tiempo de difusión teórico usando el algoritmo de concatenación:</p>
+<div class="image">
+<img src="tc.png" alt="tc.png"/>
+</div>
  </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 13 2014 20:15:19 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 13 2014 20:27:27 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
