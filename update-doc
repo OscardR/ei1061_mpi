@@ -3,7 +3,12 @@
 #remote=https
 #branch=gh-pages
 
+mv README.md README.md.back
+cat README.md.back | sed "s/\(\w*\)\.md/md_\1.html/g" > README.md
 doxygen mpi.dox
+rm README.md
+mv README.md.back README.md
+
 cd gh-pages
 git add .
 if [[ "$1" -ne "" ]]; then
