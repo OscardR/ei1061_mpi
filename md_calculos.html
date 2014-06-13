@@ -96,18 +96,21 @@ Difusión por MPI Broadcast</div></div>
 <p> Tiempo de difusión teórico usando el broadcast de MPI:</p>
 <div class="image">
 <img src="tb.png" alt="tb.png"/>
-<div class="caption">
-TB(n)=log_2{p}·(alpha+beta·n)</div></div>
- <h2>Difusión por broadcast lineal</h2>
+</div>
+<h2>Difusión por broadcast lineal</h2>
 <p>Cada proceso ha de hacer un broadcast. Por lo tanto el tiempo total de la difusión es:</p>
 <div class="image">
 <img src="tbl.png" alt="tbl.png"/>
-<div class="caption">
-T_{BL}=p·log_2{p}·(alpha+beta·n)</div></div>
-</div></div><!-- contents -->
+</div>
+<h2>Difusión por doblado recursivo</h2>
+<p>En cada etapa hay <em>n</em> envíos de tamaño exponencialmente proporcional al número de etapa, y el número de etapas es logarítmico.</p>
+<div class="image">
+<img src="tdr.png" alt="tdr.png"/>
+</div>
+ </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 13 2014 19:27:53 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 13 2014 19:55:36 for EI1061 &mdash; MPI by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
