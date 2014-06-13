@@ -6,6 +6,8 @@
 
 ## Broadcast de MPI
 
+Un proceso envía un dato al resto de procesos. En la imagen, el proceso 0 hace de raíz, y el esquema muestra como el dato del proceso 0 se propaga a todos los procesos de forma logarítmica.
+
 ![Difusión por MPI Broadcast](img/broadcast.png)
 
 Tiempo de difusión teórico usando el broadcast de MPI:
@@ -27,6 +29,10 @@ T_{BL}(n)=p\cdot \log_2{p}\cdot(\alpha+\beta\cdot n)
 ## Difusión por doblado recursivo
 
 En cada etapa hay _n_ envíos de tamaño exponencialmente proporcional al número de etapa, y el número de etapas es logarítmico.
+
+![Difusión por doblado recursivo](img/recursivo.png)
+
+Tiempo de difusión teórico usando el algoritmo de doblado recursivo:
 
 ![](img/tdr.png)
 <!---
