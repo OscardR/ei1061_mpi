@@ -8,4 +8,12 @@
 
 ![Difusión por MPI Broadcast](img/broadcast.png)
 
-![TB(n)=p·log2p·(alpha+beta·n)](img/tb.png)
+Tiempo de difusión teórico usando el broadcast de MPI:
+
+![TB(n)=log_2{p}·(alpha+beta·n)](img/tb.png)
+
+## Difusión por broadcast lineal
+
+Cada proceso ha de hacer un broadcast. Por lo tanto el tiempo total de la difusión es:
+
+![T_{BL}=p·log_2{p}·(alpha+beta·n)](img/tbl.png)
