@@ -72,3 +72,7 @@ T_C(n)=(\alpha+\beta\cdot n)\cdot(p-1)
 ### 16 procesos
 
 ![](img/teoricos_16.png)
+
+### 2048 procesos
+
+![](img/teoricos_2048.png)
