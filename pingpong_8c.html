@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>EI1061 &mdash; MPI: src/mpi_m01.c File Reference</title>
+<title>EI1061 &mdash; MPI: src/pingpong.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,30 +90,75 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">mpi_m01.c File Reference</div>  </div>
+<div class="title">pingpong.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Laboratorio M1: Introducción a MPI - Comunicación en Anillo.  
-<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
-<code>#include &lt;mpi.h&gt;</code><br/>
+<code>#include &quot;mpi.h&quot;</code><br/>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a57378ac2b9c57df9021c0b9ab17b0eb3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pingpong_8c.html#a57378ac2b9c57df9021c0b9ab17b0eb3">ONE_MIL</a>&#160;&#160;&#160;(1000000)</td></tr>
+<tr class="separator:a57378ac2b9c57df9021c0b9ab17b0eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaba170074da51c650f8cdac3750407b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pingpong_8c.html#aaba170074da51c650f8cdac3750407b7">MAX_SIZE_LOG</a>&#160;&#160;&#160;(21)</td></tr>
+<tr class="separator:aaba170074da51c650f8cdac3750407b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0592dba56693fad79136250c11e5a7fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pingpong_8c.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>&#160;&#160;&#160;(1&lt;&lt;<a class="el" href="pingpong_8c.html#aaba170074da51c650f8cdac3750407b7">MAX_SIZE_LOG</a>)</td></tr>
+<tr class="separator:a0592dba56693fad79136250c11e5a7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpi__m01_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pingpong_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac120ad17d7734f310acd4a1443d5566d"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pingpong_8c.html#ac120ad17d7734f310acd4a1443d5566d">sdata</a> [<a class="el" href="pingpong_8c.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>]</td></tr>
+<tr class="separator:ac120ad17d7734f310acd4a1443d5566d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa40e12219eca5cb2d38bfe8b29c016fb"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pingpong_8c.html#aa40e12219eca5cb2d38bfe8b29c016fb">rdata</a> [<a class="el" href="pingpong_8c.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>]</td></tr>
+<tr class="separator:aa40e12219eca5cb2d38bfe8b29c016fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Laboratorio M1: Introducción a MPI - Comunicación en Anillo. </p>
-<h1>Introducción a MPI</h1>
-<ul>
-<li>Compilar y ejecutar el programa de ejemplo de MPI en 4 nodos de patan.</li>
-<li>Desarrolla, compila y ejecuta un simple test de ping-pong MPI en 2 nodos de patan. </li>
-</ul>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a0592dba56693fad79136250c11e5a7fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_SIZE&#160;&#160;&#160;(1&lt;&lt;<a class="el" href="pingpong_8c.html#aaba170074da51c650f8cdac3750407b7">MAX_SIZE_LOG</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaba170074da51c650f8cdac3750407b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_SIZE_LOG&#160;&#160;&#160;(21)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a57378ac2b9c57df9021c0b9ab17b0eb3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ONE_MIL&#160;&#160;&#160;(1000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <div class="memitem">
 <div class="memproto">
@@ -137,38 +182,31 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Función main.</p>
-<h2>Comunicación en anillo.</h2>
-<p>Inicializa MPI y ejecuta el algoritmo de envío en anillo.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">argc</td><td>parámetro automático con el número de argumentos recibidos desde el CLI </td></tr>
-    <tr><td class="paramname">argv</td><td>[1] el primer parámetro del CLI especifica el número de elementos del vector que pertenecen a cada proceso (<code>MULTIPLO</code>). Por defecto <code>MULTIPLO</code> es 1. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 si todo ha ido bien. </dd></dl>
-<ul>
-<li>Inicializa las variables necesarias</li>
-</ul>
-<ul>
-<li>Inicializa MPI</li>
-</ul>
-<ul>
-<li>Imprime el identificador de cada proceso</li>
-</ul>
-<ul>
-<li>Inicializa <code>dato</code> a 0</li>
-</ul>
-<ul>
-<li>Cada vez que envía el dato, se incrementa en 1 su valor</li>
-</ul>
-<ul>
-<li>Imprime el identificador de cada proceso, junto con su valor para <code>dato</code></li>
-</ul>
-<ul>
-<li>Finaliza MPI y devuelve 0. </li>
-</ul>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="aa40e12219eca5cb2d38bfe8b29c016fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char rdata[<a class="el" href="pingpong_8c.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac120ad17d7734f310acd4a1443d5566d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char sdata[<a class="el" href="pingpong_8c.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
