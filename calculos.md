@@ -63,12 +63,12 @@ T_C(n)=(\alpha+\beta\cdot n)\cdot(p-1)
 
 ### 4 procesos
 
-![](img/teorico_4.png)
+![](img/teoricos_4.png)
 
 ### 8 procesos
 
-![](img/teorico_8.png)
+![](img/teoricos_8.png)
 
 ### 16 procesos
 
-![](img/teorico_16.png)
+![](img/teoricos_16.png)
